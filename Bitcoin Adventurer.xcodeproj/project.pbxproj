@@ -24,6 +24,7 @@
 		87CED5611FE754DB00C4D66E /* PriceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CED5601FE754DB00C4D66E /* PriceResponse.swift */; };
 		87CED5631FE7550B00C4D66E /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CED5621FE7550B00C4D66E /* Error.swift */; };
 		A842347C22BA6E8D001ADB11 /* BitcoinPriceFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A842347B22BA6E8D001ADB11 /* BitcoinPriceFetcher.swift */; };
+		A842347E22BA9AD0001ADB11 /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A842347D22BA9AD0001ADB11 /* TestConstants.swift */; };
 		A8CDA6B722BA4C1600BC95ED /* HTTPNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CDA6B622BA4C1600BC95ED /* HTTPNetworking.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		87CED5601FE754DB00C4D66E /* PriceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PriceResponse.swift; path = Model/PriceResponse.swift; sourceTree = "<group>"; };
 		87CED5621FE7550B00C4D66E /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Model/Error.swift; sourceTree = "<group>"; };
 		A842347B22BA6E8D001ADB11 /* BitcoinPriceFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinPriceFetcher.swift; sourceTree = "<group>"; };
+		A842347D22BA9AD0001ADB11 /* TestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
 		A8CDA6B622BA4C1600BC95ED /* HTTPNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPNetworking.swift; sourceTree = "<group>"; };
 		D150367BCF76119F68ECD227 /* Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests/Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		DBDAD690153818F33CB3A344 /* Pods_Bitcoin_Adventurer_Bitcoin_Adventurer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bitcoin_Adventurer_Bitcoin_Adventurer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +143,7 @@
 				87CED5521FE73F1200C4D66E /* AutoregisterTests.swift */,
 				87CED5541FE7513F00C4D66E /* SimulatedNetworkTests.swift */,
 				8738EDD71FE59A31000CBC22 /* Info.plist */,
+				A842347D22BA9AD0001ADB11 /* TestConstants.swift */,
 			);
 			path = "Bitcoin AdventurerTests";
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				87CED5611FE754DB00C4D66E /* PriceResponse.swift in Sources */,
 				8738EDC31FE59A31000CBC22 /* BitcoinViewController.swift in Sources */,
 				8738EDC11FE59A31000CBC22 /* AppDelegate.swift in Sources */,
+				A842347E22BA9AD0001ADB11 /* TestConstants.swift in Sources */,
 				87CED5631FE7550B00C4D66E /* Error.swift in Sources */,
 				A8CDA6B722BA4C1600BC95ED /* HTTPNetworking.swift in Sources */,
 				8714602E1FF2FB41001F9EB5 /* Endpoint.swift in Sources */,

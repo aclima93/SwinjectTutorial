@@ -31,7 +31,6 @@ import Swinject
 
 @testable import Bitcoin_Adventurer
 
-let AMOUNT = "666"
 class BasicTests: XCTestCase {
   
   private let container = Container()
