@@ -1,0 +1,6 @@
+framework module Pods_Bitcoin_Adventurer_Bitcoin_Adventurer_Tests {
+  umbrella header "Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
