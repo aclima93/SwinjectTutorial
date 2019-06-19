@@ -93,18 +93,22 @@ class SimulatedNetworkTests: XCTestCase {
   // MARK: - Tests
   
   func testDatasetOne() {
-    let fetcher = container ~> (BitcoinPriceFetcher.self, name: DataSet.one.name)
+    checkDataset(dataset: DataSet.one, expectedAmount: "100000.01")
+  }
+  
+  func testDatasetTwo() {
+    checkDataset(dataset: DataSet.two, expectedAmount: "9999999.76")
+  }
+  
+  func checkDataset(dataset: DataSet, expectedAmount: String) {
+    let fetcher = container ~> (BitcoinPriceFetcher.self, name: dataset.name)
     let expectation = XCTestExpectation(description: "Fetch Bitcoin price from dataset one")
     
     fetcher.fetch { response in
-      XCTAssertEqual("100000.01", response!.data.amount)
+      XCTAssertEqual(expectedAmount, response!.data.amount)
       expectation.fulfill()
     }
     
     wait(for: [expectation], timeout: 1.0)
-  }
-  
-  func testDatasetTwo() {
-    XCTFail("Test not yet written.")
   }
 }
