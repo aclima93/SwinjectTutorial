@@ -31,6 +31,7 @@ import Swinject
 
 @testable import Bitcoin_Adventurer
 
+let AMOUNT = "666"
 class BasicTests: XCTestCase {
   
   private let container = Container()
@@ -39,6 +40,24 @@ class BasicTests: XCTestCase {
   
   override func setUp() {
     super.setUp()
+    
+    // register the dependencies in a bottom-up fashion
+    container.register(Currency.self) { _ in .USD }
+    container.register(CryptoCurrency.self) { _ in .BTC }
+    
+    container.register(Price.self) { resolver in
+      // ensure that the dependencies are being correctly created
+      let crypto = resolver.resolve(CryptoCurrency.self)!
+      let currency = resolver.resolve(Currency.self)!
+
+      // return an object that is built upon its dependencies
+      return Price(base: crypto, amount: AMOUNT, currency: currency)
+    }
+    
+    container.register(PriceResponse.self) { resolver in
+      let price = resolver.resolve(Price.self)!
+      return PriceResponse(data: price, warnings: nil)
+    }
   }
   
   override func tearDown() {
@@ -49,7 +68,9 @@ class BasicTests: XCTestCase {
   // MARK: - Tests
   
   func testPriceResponseData() {
-    XCTFail("Test not yet written.")
+    let response = container.resolve(PriceResponse.self)!
+    // expect every object to be correctly built upon its dependencies, break otherwise
+    XCTAssertEqual(response.data.amount, AMOUNT)
   }
   
 }
