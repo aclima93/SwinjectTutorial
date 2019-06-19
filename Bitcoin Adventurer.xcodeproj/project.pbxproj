@@ -23,6 +23,7 @@
 		87CED55F1FE754A900C4D66E /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CED55E1FE754A900C4D66E /* Price.swift */; };
 		87CED5611FE754DB00C4D66E /* PriceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CED5601FE754DB00C4D66E /* PriceResponse.swift */; };
 		87CED5631FE7550B00C4D66E /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CED5621FE7550B00C4D66E /* Error.swift */; };
+		A8CDA6B722BA4C1600BC95ED /* HTTPNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CDA6B622BA4C1600BC95ED /* HTTPNetworking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		87CED55E1FE754A900C4D66E /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Price.swift; path = Model/Price.swift; sourceTree = "<group>"; };
 		87CED5601FE754DB00C4D66E /* PriceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PriceResponse.swift; path = Model/PriceResponse.swift; sourceTree = "<group>"; };
 		87CED5621FE7550B00C4D66E /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Model/Error.swift; sourceTree = "<group>"; };
+		A8CDA6B622BA4C1600BC95ED /* HTTPNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPNetworking.swift; sourceTree = "<group>"; };
 		D150367BCF76119F68ECD227 /* Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests/Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		DBDAD690153818F33CB3A344 /* Pods_Bitcoin_Adventurer_Bitcoin_Adventurer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bitcoin_Adventurer_Bitcoin_Adventurer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF995E18CCFBF90E225865E /* Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests/Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		8738EDBF1FE59A31000CBC22 /* Bitcoin Adventurer */ = {
 			isa = PBXGroup;
 			children = (
+				A8CDA6B522BA4BA600BC95ED /* Dependencies */,
 				8738EDC01FE59A31000CBC22 /* AppDelegate.swift */,
 				8738EDCC1FE59A31000CBC22 /* Info.plist */,
 				87CED55C1FE7540300C4D66E /* Storyboard */,
@@ -185,6 +188,14 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
+		A8CDA6B522BA4BA600BC95ED /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				A8CDA6B622BA4C1600BC95ED /* HTTPNetworking.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
 		D5D4B8377150D92803523811 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,7 +217,6 @@
 				8738EDBA1FE59A31000CBC22 /* Frameworks */,
 				8738EDBB1FE59A31000CBC22 /* Resources */,
 				81C476C5B92BAD167578C389 /* [CP] Embed Pods Frameworks */,
-				9B1B2041AC50C14F56AF0C41 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -226,7 +236,6 @@
 				8738EDCE1FE59A31000CBC22 /* Frameworks */,
 				8738EDCF1FE59A31000CBC22 /* Resources */,
 				37B3B686A8A563C621D2E651 /* [CP] Embed Pods Frameworks */,
-				1C833E9D045CD5D60E48A85D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -301,28 +310,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1C833E9D045CD5D60E48A85D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests/Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		37B3B686A8A563C621D2E651 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests/Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests/Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectAutoregistration/SwinjectAutoregistration.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
@@ -335,7 +329,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests/Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests/Pods-Bitcoin Adventurer-Bitcoin Adventurer Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4FCF49547CE838907FB10A22 /* [CP] Check Pods Manifest.lock */ = {
@@ -362,7 +356,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Bitcoin Adventurer/Pods-Bitcoin Adventurer-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Bitcoin Adventurer/Pods-Bitcoin Adventurer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectAutoregistration/SwinjectAutoregistration.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
@@ -375,22 +369,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bitcoin Adventurer/Pods-Bitcoin Adventurer-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9B1B2041AC50C14F56AF0C41 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bitcoin Adventurer/Pods-Bitcoin Adventurer-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bitcoin Adventurer/Pods-Bitcoin Adventurer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F155FA0D984F443D20EFF016 /* [CP] Check Pods Manifest.lock */ = {
@@ -422,6 +401,7 @@
 				8738EDC31FE59A31000CBC22 /* BitcoinViewController.swift in Sources */,
 				8738EDC11FE59A31000CBC22 /* AppDelegate.swift in Sources */,
 				87CED5631FE7550B00C4D66E /* Error.swift in Sources */,
+				A8CDA6B722BA4C1600BC95ED /* HTTPNetworking.swift in Sources */,
 				8714602E1FF2FB41001F9EB5 /* Endpoint.swift in Sources */,
 				87CED55F1FE754A900C4D66E /* Price.swift in Sources */,
 			);

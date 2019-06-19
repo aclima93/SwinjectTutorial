@@ -34,6 +34,8 @@ internal class BitcoinViewController: UIViewController {
   @IBOutlet weak private var primary: UILabel!
   @IBOutlet weak private var partial: UILabel!
   
+  let networking = HTTPNetworking()
+  
   private let dollarsDisplayFormatter: NumberFormatter = {
     let formatter = NumberFormatter()
     formatter.maximumFractionDigits = 0
@@ -67,37 +69,25 @@ internal class BitcoinViewController: UIViewController {
   }
   
   private func requestPrice()  {
-    let bitcoin = Coinbase.bitcoin.path
-    
-    // 1. Make URL request
-    guard let url = URL(string: bitcoin) else { return }
-    var request = URLRequest(url: url)
-    request.cachePolicy = .reloadIgnoringCacheData
-    
-    // 2. Make networking request
-    let task = URLSession.shared.dataTask(with: request) { data, _, error in
-      
-      // 3. Check for errors
+    networking.request(from: Coinbase.bitcoin, completion: { data, error in
+
+      // 1. Check for errors
       if let error = error {
         print("Error received requesting Bitcoin price: \(error.localizedDescription)")
-        return
       }
       
-      // 4. Parse the returned information
+      // 2. Parse the returned information
       let decoder = JSONDecoder()
-
       guard let data = data,
-            let response = try? decoder.decode(PriceResponse.self,
-                                               from: data) else { return }
+        let response = try? decoder.decode(PriceResponse.self, from: data)
+      else { return }
       
       print("Price returned: \(response.data.amount)")
       
-      // 5. Update the UI with the parsed PriceResponse
+      // 3. Update the UI with the parsed PriceResponse
       DispatchQueue.main.async { [weak self] in
         self?.updateLabel(price: response.data)
       }
-    }
-
-    task.resume()
+    })
   }
 }
