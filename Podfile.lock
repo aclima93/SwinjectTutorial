@@ -10,6 +10,12 @@ DEPENDENCIES:
   - SwinjectAutoregistration (= 2.1.1)
   - SwinjectStoryboard (= 1.1.2)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Swinject
+    - SwinjectAutoregistration
+    - SwinjectStoryboard
+
 SPEC CHECKSUMS:
   Swinject: afea49fd95f392b41171669f165842879c48fad6
   SwinjectAutoregistration: d06b56bd8f912b9fb9c59c15181342558a734b1b
@@ -17,4 +23,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 4c352a3f9384dd5f9ca5db925c70e7d22b5d10a5
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.6.1
