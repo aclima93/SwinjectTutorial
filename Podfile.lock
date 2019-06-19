@@ -1,26 +1,35 @@
 PODS:
-  - Swinject (2.1.1)
-  - SwinjectAutoregistration (2.1.1):
-    - Swinject (~> 2.1)
-  - SwinjectStoryboard (1.1.2):
-    - Swinject (~> 2.1)
+  - Swinject (2.6.1)
+  - SwinjectAutoregistration (2.6.0):
+    - Swinject (~> 2.6)
+  - SwinjectStoryboard (2.1.0):
+    - Swinject (~> 2.5)
 
 DEPENDENCIES:
-  - Swinject (= 2.1.1)
-  - SwinjectAutoregistration (= 2.1.1)
-  - SwinjectStoryboard (= 1.1.2)
+  - Swinject (~> 2.1)
+  - SwinjectAutoregistration (~> 2.1)
+  - SwinjectStoryboard (from `https://github.com/mdyson/SwinjectStoryboard.git`, branch `master`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Swinject
     - SwinjectAutoregistration
-    - SwinjectStoryboard
+
+EXTERNAL SOURCES:
+  SwinjectStoryboard:
+    :branch: master
+    :git: https://github.com/mdyson/SwinjectStoryboard.git
+
+CHECKOUT OPTIONS:
+  SwinjectStoryboard:
+    :commit: 6063c620b35ec189840318e0be03727372e934d9
+    :git: https://github.com/mdyson/SwinjectStoryboard.git
 
 SPEC CHECKSUMS:
-  Swinject: afea49fd95f392b41171669f165842879c48fad6
-  SwinjectAutoregistration: d06b56bd8f912b9fb9c59c15181342558a734b1b
-  SwinjectStoryboard: 92e75763c3299cdf627bef98a5180dc894864336
+  Swinject: b624462f47b635a64f89a60a247baa5fccec14e1
+  SwinjectAutoregistration: 93a908f7543c401b0c315305ac0ae501efdbce89
+  SwinjectStoryboard: 688f096033103e66ffcf6ca678211acd7d7be505
 
-PODFILE CHECKSUM: 4c352a3f9384dd5f9ca5db925c70e7d22b5d10a5
+PODFILE CHECKSUM: 2b8f50b7f172ab164d5e3e53341566513701418d
 
 COCOAPODS: 1.6.1
