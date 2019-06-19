@@ -9,18 +9,23 @@ DerivedData/
 ## Various settings
 *.pbxuser
 !default.pbxuser
+*.mode1
 *.mode1v3
 !default.mode1v3
 *.mode2v3
 !default.mode2v3
+*.perspective
 *.perspectivev3
 !default.perspectivev3
-xcuserdata/
+xcuserdata/*
+Snapshots
 
 ## Other
 *.moved-aside
 *.xccheckout
 *.xcscmblueprint
+*.xcuserstate
+*.DS_Store
 
 ## Obj-C/Swift specific
 *.hmap
@@ -28,17 +33,12 @@ xcuserdata/
 *.dSYM.zip
 *.dSYM
 
-## Playgrounds
-timeline.xctimeline
-playground.xcworkspace
+# old skool
+.svn
 
-# Swift Package Manager
-#
-# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
-# Packages/
-# Package.pins
-# Package.resolved
-.build/
+# vim noise
+*~
+*.swp
 
 # CocoaPods
 #
@@ -57,12 +57,34 @@ Carthage/Build
 
 # fastlane
 #
-# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the 
 # screenshots whenever they are needed.
 # For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/#source-control
+# https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Gitignore.md
 
 fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots/**/*.png
-fastlane/test_output
+fastlane/screenshots
+
+#Code Injection
+#
+# After new code Injection tools there's a generated folder /iOSInjectionProject
+# https://github.com/johnno1962/injectionforxcode
+
+iOSInjectionProject/
+
+# AppCode
+.idea/*
+
+# -------------
+
+## User workspace related
+*.xcodeproj/project.xcworkspace/xcuserdata/*
+*/*.xcodeproj/xcuserdata/*
+*/*.xcodeproj/xcuserdata
+*.xcworkspace/xcuserdata/*
+*.xcodeproj/xcuserdata/*
+*.xcworkspace/
+*/*.xcodeproj/xcshareddata/*
+
+# Podfiles
+Pods/*
