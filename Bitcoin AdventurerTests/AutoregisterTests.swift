@@ -46,6 +46,8 @@ extension Price {
   }
 }
 
+let AMOUNT = "666"
+
 class AutoregisterTests: XCTestCase {
   
   private let container = Container()
@@ -54,6 +56,8 @@ class AutoregisterTests: XCTestCase {
   
   override func setUp() {
     super.setUp()
+    container.autoregister(Price.self, argument: String.self, initializer: Price.init(amount:))
+    container.autoregister(PriceResponse.self, argument: Price.self, initializer: PriceResponse.init(data:))
   }
   
   override func tearDown() {
@@ -64,11 +68,14 @@ class AutoregisterTests: XCTestCase {
   // MARK: - Tests
   
   func testPriceResponseData() {
-    XCTFail("Test not yet written.")
+    let price = container ~> (Price.self, argument: AMOUNT)
+    let response = container ~> (PriceResponse.self, argument: price)
+    XCTAssertEqual(response.data.amount, AMOUNT)
   }
   
   func testPrice() {
-    XCTFail("Test not yet written.")
+    let price = container ~> (Price.self, argument: AMOUNT)
+    XCTAssertEqual(price.amount, AMOUNT)
   }
 
 }
